@@ -1,14 +1,16 @@
+#import libraries
 import json
-
 import requests
 import pprint
 
+#using Python Requests to interact with a REST API
 r = requests.get('https://api.magicthegathering.io/v1/cards')
 
 r.json()
 pprint.pprint(r.json())
 pprint.pprint(r.json()['cards'][0])
 
+#save and open file JSON
 file = open("./file-" + "cards"+".json", "w+")
 print(file.name)
 file.writelines(r.text)
